@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="e4012e18-6a6b-4f40-aefa-c83b078c136c">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_CHEST_1_LOOT" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="1" />
+        <field name="EndLevel" type="IntegerTableFieldDefinition" value="2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="c05ad2ea-46a1-4aae-bbcb-a0c0e874db9d" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_0" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="3" />
+        <field name="EndLevel" type="IntegerTableFieldDefinition" value="4" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="57ff1fbf-f826-49fd-8f8c-e980cb950ead" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_2" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="8e59c353-b6ba-4a66-bc34-ba1d1646885e" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_2" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="5" />
+        <field name="EndLevel" type="IntegerTableFieldDefinition" value="6" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="d3faf641-1807-4220-9aa3-3a3a67268cd4" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_3" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_2" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="2a322cb2-d02c-44a3-93ce-d375c7212936" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_4" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_3" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="7025b009-234e-4cb3-b05d-40ee5576b2ad" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_5" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="7" />
+        <field name="EndLevel" type="IntegerTableFieldDefinition" value="8" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_2" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="e71c2790-90cc-403d-bec7-60e384ee60b3" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_6" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_3" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="84d539bb-fc8f-4508-af5f-fae8b492e244" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_7" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_4" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="f676d467-8bfc-479b-af10-0625bc8c1785" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_8" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="9" />
+        <field name="EndLevel" type="IntegerTableFieldDefinition" value="10" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_3" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="2128ace2-08c7-488c-b7a3-c43ed9c61f71" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_9" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_4" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="87cb4f89-e167-430a-9613-932f0b3e7a3c" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_10" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_5" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="707bfa8f-d9f4-4b63-aaaf-01393a81d87d" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_11" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="11" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_4" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="5e197f99-d504-4509-9a3b-8a0263dfc84f" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_12" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_5" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="2" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="e0201687-e798-45f8-912d-382646337120" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_Scroll_substat_13" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="MagicScroll_6" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="a76f02ea-7670-4d97-ac6d-c481b69266ec" />
+        <field name="UUID" type="IdTableFieldDefinition" value="7f58af62-c25d-438c-af20-8a0893ab87bc" />
+        <field name="Name" type="NameTableFieldDefinition" value="82e54aca-12f2-4083-9309-d8e085c54104_substat_0" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="-2" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="I_SMG_LGM_EPIC__MAZE_SCROLL" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="82e54aca-12f2-4083-9309-d8e085c54104" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="3,3;4,2;5,1;6,1;7,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="Gold" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="82e54aca-12f2-4083-9309-d8e085c54104" />
+        <field name="UUID" type="IdTableFieldDefinition" value="1717e3b2-83f3-4c5d-8b50-2bc569922291" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_substat_0" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="T_Exploration_Minor_DoublingPack" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="3" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="82e54aca-12f2-4083-9309-d8e085c54104" />
+        <field name="UUID" type="IdTableFieldDefinition" value="98d84a2c-eca4-48ef-9492-061bb0c427a2" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_substat_1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="T_Exploration_Minor_GuaranteedSinglePack" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="true">
+      <fields>
+        <field name="Using" type="BaseClassTableFieldDefinition" value="82e54aca-12f2-4083-9309-d8e085c54104" />
+        <field name="UUID" type="IdTableFieldDefinition" value="e82d238b-2499-41cc-bb30-5aa22644af84" />
+        <field name="Name" type="NameTableFieldDefinition" value="Exploration_Minor_substat" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="-6" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="I_SMG_LGM_BASIC_MAZE_SCROLL" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="fe243866-a254-4b94-a005-2ce3311fee9c" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_INGEDIENT_ARK_B_TT" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="1" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="I_ALCH_Ingredient_Part_BehirScales&#xD;&#xA;" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="ed8de7b3-766c-419c-b492-cd05f827b77c" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_POTION_DEPOSITORY_B_TT" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="1" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="I_CONS_Potion_Antitoxin&#xD;&#xA;" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="5fe75e98-797d-4a8b-9abe-533d621827d6" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_SCROLL_VAULT_B_TT" />
+        <field name="StartLevel" type="IntegerTableFieldDefinition" value="1" />
+        <field name="DropCount" type="StringTableFieldDefinition" value="1,1" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="I_LOOT_SCROLL_ArcaneLock&#xD;&#xA;" />
+        <field name="Frequency" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>

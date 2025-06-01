@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stats stat_object_definition_id="e078e210-b9ba-48e5-afe3-c5eb91ba8545">
+  <stat_objects>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="c236514d-90cb-4064-b741-3dcd12d17c0e" />
+        <field name="Name" type="NameTableFieldDefinition" value="_BaseItem" />
+        <field name="Vitality" type="IntegerTableFieldDefinition" value="-1" />
+        <field name="InventoryTab" type="EnumerationTableFieldDefinition" value="Auto" enumeration_type_name="InventoryTabs" version="1" />
+        <field name="PiercingResistance" type="EnumerationListTableFieldDefinition" value="Resistant" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="NecroticResistance" type="EnumerationListTableFieldDefinition" value="Resistant" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="PoisonResistance" type="EnumerationListTableFieldDefinition" value="Immune" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="PsychicResistance" type="EnumerationListTableFieldDefinition" value="Immune" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="RadiantResistance" type="EnumerationListTableFieldDefinition" value="Resistant" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="MinAmount" type="IntegerTableFieldDefinition" value="1" />
+        <field name="MaxAmount" type="IntegerTableFieldDefinition" value="1" />
+        <field name="PersonalStatusImmunities" type="StatusIdsTableFieldDefinition" value="SG_Condition;BLEEDING;MAG_ATTACK_DEBUFF" />
+        <field name="FallingHitEffect" type="StringTableFieldDefinition" value="VFX_Combat_Bludgeoning_Damage_Critical_01" />
+        <field name="FallingLandEffect" type="StringTableFieldDefinition" value="VFX_Combat_Force_Land_01" />
+        <field name="ArmorClass" type="IntegerTableFieldDefinition" value="0" />
+        <field name="ItemUseType" type="EnumerationTableFieldDefinition" value="None" enumeration_type_name="ItemUseTypes" version="1" />
+        <field name="DefaultBoosts" type="StringTableFieldDefinition" value="CriticalHit(AttackTarget,Failure,Never);CriticalHit(AttackTarget,Success,Never)" />
+        <field name="ValueUUID" type="GuidObjectTableFieldDefinition" value="91696f37-5a03-4f10-b636-2e5e2096a594" />
+        <field name="ValueScale" type="FloatTableFieldDefinition" value="1" />
+        <field name="ValueLevel" type="IntegerTableFieldDefinition" value="1" />
+        <field name="ValueRounding" type="BoolTableFieldDefinition" value="True" />
+        <field name="Weight" type="FloatTableFieldDefinition" value="0" />
+        <field name="Sight" type="IntegerTableFieldDefinition" value="0" />
+        <field name="FOV" type="IntegerTableFieldDefinition" value="0" />
+        <field name="DarkvisionRange" type="IntegerTableFieldDefinition" value="0" />
+        <field name="MinimumDetectionRange" type="IntegerTableFieldDefinition" value="0" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="0452c104-04fb-4dc5-bfc4-613bf6670469" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_OBJ_Epic_Loot_Goblin_Maze_Scroll" />
+        <field name="Using" type="BaseClassTableFieldDefinition" value="00e2b446-e57f-4b36-b151-9738bc18b29d" />
+        <field name="Vitality" type="IntegerTableFieldDefinition" value="1" />
+        <field name="Weight" type="FloatTableFieldDefinition" value="0.05" />
+        <field name="Value" type="IntegerTableFieldDefinition" value="500" />
+        <field name="Rarity" type="EnumerationTableFieldDefinition" value="VeryRare" enumeration_type_name="Rarity" version="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="e079e69d-f3ef-4333-aca8-f8922d3896d0" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_OBJ_Basic_Loot_Goblin_Maze_Scroll" />
+        <field name="Vitality" type="IntegerTableFieldDefinition" value="1" />
+        <field name="InventoryTab" type="EnumerationTableFieldDefinition" value="BooksAndKeys" enumeration_type_name="InventoryTabs" version="1" />
+        <field name="PiercingResistance" type="EnumerationListTableFieldDefinition" value="Resistant" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="NecroticResistance" type="EnumerationListTableFieldDefinition" value="None" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="PoisonResistance" type="EnumerationListTableFieldDefinition" value="None" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="PsychicResistance" type="EnumerationListTableFieldDefinition" value="None" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="RadiantResistance" type="EnumerationListTableFieldDefinition" value="Vulnerable" enumeration_type_name="ResistanceFlags" version="1" />
+        <field name="ValueUUID" type="GuidObjectTableFieldDefinition" value="4c5217d8-0232-4592-9e32-2fd729123f53" />
+        <field name="ValueScale" type="FloatTableFieldDefinition" value="1" />
+        <field name="ValueLevel" type="IntegerTableFieldDefinition" value="1" />
+        <field name="ValueRounding" type="BoolTableFieldDefinition" value="True" />
+        <field name="Weight" type="FloatTableFieldDefinition" value="0.05" />
+        <field name="Using" type="BaseClassTableFieldDefinition" value="00e2b446-e57f-4b36-b151-9738bc18b29d" />
+        <field name="Value" type="IntegerTableFieldDefinition" value="50" />
+        <field name="Rarity" type="EnumerationTableFieldDefinition" value="Uncommon" enumeration_type_name="Rarity" version="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="ac1abb45-762f-4700-9d16-6829f4f3a04e" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_OBJ_Medium_Gold_Pile" />
+        <field name="Using" type="BaseClassTableFieldDefinition" value="849d4c9c-ed8f-4b0e-ab92-7d3fad1fa2dd" />
+        <field name="RootTemplate" type="RootTemplateTableFieldDefinition" value="1c3c9c74-34a1-4685-989e-410dc080be6f" />
+        <field name="Value" type="IntegerTableFieldDefinition" value="50" />
+        <field name="Weight" type="FloatTableFieldDefinition" value="0.05" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="Gold" />
+        <field name="Priority" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="28963a47-7ffe-4966-b6e6-4ff4268978d5" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_OBJ_Big_Gold_Pile" />
+        <field name="Using" type="BaseClassTableFieldDefinition" value="849d4c9c-ed8f-4b0e-ab92-7d3fad1fa2dd" />
+        <field name="RootTemplate" type="RootTemplateTableFieldDefinition" value="1c3c9c74-34a1-4685-989e-410dc080be6f" />
+        <field name="Value" type="IntegerTableFieldDefinition" value="500" />
+        <field name="Weight" type="FloatTableFieldDefinition" value="0.5" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="Gold" />
+        <field name="Priority" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+    <stat_object is_substat="false">
+      <fields>
+        <field name="UUID" type="IdTableFieldDefinition" value="f6329080-2fbb-418d-ab92-0cc6ec41135c" />
+        <field name="Name" type="NameTableFieldDefinition" value="SMG_LGM_OBJ_Small_Gold_Pile" />
+        <field name="Using" type="BaseClassTableFieldDefinition" value="849d4c9c-ed8f-4b0e-ab92-7d3fad1fa2dd" />
+        <field name="RootTemplate" type="RootTemplateTableFieldDefinition" value="1c3c9c74-34a1-4685-989e-410dc080be6f" />
+        <field name="Value" type="IntegerTableFieldDefinition" value="5" />
+        <field name="Weight" type="FloatTableFieldDefinition" value="0.005" />
+        <field name="ObjectCategory" type="StringTableFieldDefinition" value="Gold" />
+        <field name="Priority" type="IntegerTableFieldDefinition" value="1" />
+      </fields>
+    </stat_object>
+  </stat_objects>
+</stats>
