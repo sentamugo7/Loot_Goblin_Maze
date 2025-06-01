@@ -1,0 +1,210 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+// constants
+
+//// DB_SMG_LGM_CONST_PLAYER_X_DISPLACEMENT((REAL)_DISPLACEMENT_DISTANCE);
+DB_SMG_LGM_CONST_PLAYER_X_DISPLACEMENT(1.5);
+//// DB_SMG_LGM_CONST_PART_DIMENSION((STRING)_DIMENSION_NAME, (REAL)_DISTANCE);
+//// DB_SMG_LGM_CONST_PART_GUID((STRING)_GUID_NAME, (GUID)_GUID);
+DB_SMG_LGM_CONST_PART_DIMENSION("XZ_Multiplier", 8.159936);
+DB_SMG_LGM_CONST_PART_DIMENSION("Y_Multiplier", 9.362);
+DB_SMG_LGM_CONST_PART_GUID("Roof_GUID", 1d39fa1f-15b9-409c-8457-ef302a2425e0);
+DB_SMG_LGM_CONST_PART_DIMENSION("Roof_XZ_Offset", 0.0);
+DB_SMG_LGM_CONST_PART_GUID("Wall_GUID", 6425e3ea-8664-4673-86b5-47ff22b16c3d);
+DB_SMG_LGM_CONST_PART_DIMENSION("Wall_XZ_Offset", 1.0);
+DB_SMG_LGM_CONST_PART_GUID("SHELF_GUID", dbd91eb7-79e0-4f56-a13e-0b1ecd045d57);
+DB_SMG_LGM_CONST_PART_DIMENSION("SHELF_XZ_Offset", 0.0);
+DB_SMG_LGM_CONST_PART_GUID("CRATE_GUID", 9611ac43-410c-447d-b786-853b8d30408c);
+DB_SMG_LGM_CONST_PART_DIMENSION("CRATE_XZ_Offset", 0.0);
+
+//DOOR_City_Bhaal_House_Secret_Sliding_A_be0379ff-6eba-4fb3-96f4-cb637fdd2273
+//DOOR_City_Bhaal_House_Secret_Sliding_A_Dirty_06668a27-3652-4b39-94b9-1ed74eca230c
+//DOOR_City_Bhaal_House_Secret_Sliding_B_02a1b856-9c61-4c7f-b59f-462d8001120e
+//PUZ_GEN_Castle_Wall_Breakable_A_183153fc-10d2-43f0-a0ca-0ced735adef5
+//PUZ_GEN_DestructibleWall_Wood_A_d374f147-8d09-4972-9261-b729d955b7d2
+//TOOL_GEN_Sign_Wall_A_Gold_0cbd644f-4b14-4e73-a692-328f82eb4087
+//TOOL_GEN_Sign_Wall_A_Wood_b1b8a6ff-3eb7-4d31-badf-49c49c204e14
+//DOOR_Harbor_House_Secret_Sliding_C_9a6d6ae6-9b4a-4b29-95c9-1847e2f34612
+
+
+// variables
+//// DB_SMG_LGM_VAR_LAST_PLACED_PART((ITEM)_PART);
+//// DB_SMG_LGM_VAR_PLACED_PARTS((ITEM)_PART);
+//// DB_SMG_LGM_VAR_XZ_ADJUST((REAL)_ADJUST_DISTANCE);
+KBSECTION
+// This Baldur's Gate 3 mod will create a small maze and transport the
+// player to the start of the maze. They can wander throught the maze and
+// find random loot. When the player reaches the end of the maze,
+// they are returned to their original spot.
+
+///////////////////////// CONSTRUCT MAZE
+
+PROC
+PROC_SMG_LGM_CONSTRUCT_MAZE()
+AND
+DB_SMG_LGM_CONST_PART_DIMENSION("XZ_Multiplier", _XZ_Multiplier)
+AND
+RealProduct(_XZ_Multiplier, -0.5, _ADJUST_DISTANCE)
+THEN
+DB_SMG_LGM_VAR_XZ_ADJUST(_ADJUST_DISTANCE);
+PROC_SMG_LGM_CONSTRUCT_ADDONS();
+PROC_SMG_LGM_CONSTRUCT_CELLS();
+PROC_SMG_LGM_START_CRITTERS();
+
+// add a maze part - default rotate and X,Y,Z displacement
+PROC PROC_SMG_LGM_ADD_PART((STRING)_Type, (INTEGER)_Row, (INTEGER)_Column, (INTEGER)_Height)
+THEN
+PROC_SMG_LGM_ADD_PART(_Type, _Row, _Column, _Height, 0, 0.0, 0.0, 0.0);
+
+// add a maze part - default X,Y,Z displacement
+PROC PROC_SMG_LGM_ADD_PART((STRING)_Type, (INTEGER)_Row, (INTEGER)_Column, (INTEGER)_Height, (INTEGER)_Rotate)
+THEN
+PROC_SMG_LGM_ADD_PART(_Type, _Row, _Column, _Height, _Rotate, 0.0, 0.0, 0.0);
+
+// add a maze part - given the part and position and rotation and X,Y,Z displacement
+PROC PROC_SMG_LGM_ADD_PART((STRING)_Type, (INTEGER)_Row, (INTEGER)_Column, (INTEGER)_Height, (INTEGER)_Rotate, (REAL)_X_DISPLACEMENT, (REAL)_Y_DISPLACEMENT, (REAL)_Z_DISPLACEMENT)
+AND
+Concatenate(_Type, "_GUID", _GUID_Key)
+AND
+DB_SMG_LGM_CONST_PART_GUID(_GUID_Key, _GUID)
+AND
+Concatenate(_Type, "_XZ_Offset", _XZ_Offset_Key)
+AND
+DB_SMG_LGM_CONST_PART_DIMENSION(_XZ_Offset_Key, _XZ_Offset_BOOL_REAL)
+THEN
+PROC_SMG_LGM_ADD_OBJECT(_GUID, _XZ_Offset_BOOL_REAL, _Row, _Column, _Height, _Rotate, _X_DISPLACEMENT, _Y_DISPLACEMENT, _Z_DISPLACEMENT);
+
+PROC
+PROC_SMG_LGM_ADD_OBJECT((GUIDSTRING)_GUID, (REAL)_XZ_Offset_BOOL_REAL, (INTEGER)_Row, (INTEGER)_Column, (INTEGER)_Storey, (INTEGER)_Rotate, (REAL)_X_DISPLACEMENT, (REAL)_Y_DISPLACEMENT, (REAL)_Z_DISPLACEMENT)
+AND
+DB_SMG_LGM_VAR_CENTER(_X_CENTER, _Y_CENTER, _Z_CENTER)
+AND
+IntegerToReal(_Rotate, _REAL_Rotate)
+AND
+RealProduct(_REAL_Rotate, 90.0, _RotateAngle)
+AND
+RealSubtract(1.0, _REAL_Rotate, _REAL_ReverseRotate)
+AND
+DB_SMG_LGM_CONST_PART_DIMENSION("XZ_Multiplier", _XZ_Multiplier)
+AND
+DB_SMG_LGM_CONST_PART_DIMENSION("Y_Multiplier", _Y_Multiplier)
+AND
+DB_SMG_LGM_VAR_XZ_ADJUST(_ADJUST_DISTANCE)
+AND
+RealProduct(_XZ_Offset_BOOL_REAL, _ADJUST_DISTANCE, _XZ_Offset_1)
+AND
+RealProduct(_XZ_Offset_1, _REAL_Rotate, _X_Offset)
+AND
+RealProduct(_XZ_Offset_1, _REAL_ReverseRotate, _Z_Offset)
+AND
+IntegerToReal(_Row, _REAL_Row)
+AND
+RealProduct(_REAL_Row, _XZ_Multiplier, _X_2)
+AND
+RealSum(_X_2, _X_Offset, _X_3)
+AND
+RealSum(_X_3, _X_Center, _X_4)
+AND
+RealProduct(_X_DISPLACEMENT, _XZ_Multiplier, _X_5)
+AND
+RealSum(_X_4, _X_5, _X)
+AND
+IntegerToReal(_Storey, _REAL_Storey)
+AND
+RealProduct(_REAL_Storey, _Y_Multiplier, _Y_2)
+AND
+RealProduct(_Y_DISPLACEMENT, _Y_Multiplier, _Y_3)
+AND
+RealSum(_Y_2, _Y_3, _Y)
+AND
+IntegerToReal(_Column, _REAL_Column)
+AND
+RealProduct(_REAL_Column, _XZ_Multiplier, _Z_2)
+AND
+RealSum(_Z_2, _Z_Offset, _Z_3)
+AND
+RealSum(_Z_3, _Z_Center, _Z_4)
+AND
+RealProduct(_Z_DISPLACEMENT, _XZ_Multiplier, _Z_5)
+AND
+RealSum(_Z_4, _Z_5, _Z)
+AND
+CreateAt(_GUID, _X, _Y, _Z, 0, 1, "", _CreatedPart)
+THEN
+ItemRotateYToAngle((ITEM)_CreatedPart, _RotateAngle, 999999.0);
+DB_SGM_LGM_PLACED_PARTS((ITEM)_CreatedPart);
+PROC_SMG_LGM_CLEAR_DB_SMG_LGM_VAR_LAST_PLACED_PART();
+DB_SMG_LGM_VAR_LAST_PLACED_PART(_CreatedPart);
+
+// build all the cells in the maze(loop through row and column)
+PROC
+PROC_SMG_LGM_CONSTRUCT_CELLS()
+AND
+DB_SMG_LGM_VAR_ROW_VALUES(_ROW_LOOP)
+AND
+DB_SMG_LGM_VAR_COLUMN_VALUES((INTEGER)_COLUMN_LOOP)
+THEN
+PROC_SMG_LGM_CONSTRUCT_CELL(_ROW_LOOP, _COLUMN_LOOP);
+
+// build the cell wall at _ROW_SIZE in the maze for ROW == 0
+PROC
+PROC_SMG_LGM_CONSTRUCT_CELL((INTEGER)_ROW, (INTEGER)_COLUMN)
+AND
+_ROW == 0
+AND
+DB_SMG_LGM_VAR_DIMENSIONS(_ROW_SIZE, _, _)
+AND
+IntegerSubtract(_ROW_SIZE, 1, _ROW_SIZE_MINUS_1)
+AND
+NOT DB_SMG_LGM_VAR_PASSAGE(_ROW_SIZE_MINUS_1, _COLUMN, _ROW_SIZE, _COLUMN)
+THEN
+PROC_SMG_LGM_ADD_PART("Wall", _ROW_SIZE, _COLUMN, 0, 1);
+
+// build the cell wall at _COLUMN_SIZE in the maze for column == 0
+PROC
+PROC_SMG_LGM_CONSTRUCT_CELL((INTEGER)_ROW, (INTEGER)_COLUMN)
+AND
+_COLUMN == 0
+AND
+DB_SMG_LGM_VAR_DIMENSIONS(_, _, _COLUMN_SIZE)
+AND
+IntegerSubtract(_COLUMN_SIZE, 1, _COLUMN_SIZE_MINUS_1)
+AND
+NOT DB_SMG_LGM_VAR_PASSAGE(_ROW, _COLUMN_SIZE_MINUS_1, _ROW, _COLUMN_SIZE)
+THEN
+PROC_SMG_LGM_ADD_PART("Wall", _ROW, _COLUMN_SIZE, 0, 0);
+
+// build the cell wall in the maze where there is no passage set - horizontal
+PROC
+PROC_SMG_LGM_CONSTRUCT_CELL((INTEGER)_ROW, (INTEGER)_COLUMN)
+//AND /////////////////////////////////////////////
+//_ROW == 0 /////////////////////////////////////////////
+AND
+IntegerSubtract(_ROW, 1, _ROW_MINUS_1)
+AND
+NOT DB_SMG_LGM_VAR_PASSAGE(_ROW_MINUS_1, _COLUMN, _ROW, _COLUMN)
+THEN
+PROC_SMG_LGM_ADD_PART("Wall", _ROW, _COLUMN, 0, 1);
+
+// build the cell wall in the maze where there is no passage set - vertical
+PROC
+PROC_SMG_LGM_CONSTRUCT_CELL((INTEGER)_ROW, (INTEGER)_COLUMN)
+//AND /////////////////////////////////////////////
+//_COLUMN == 0 /////////////////////////////////////////////
+AND
+IntegerSubtract(_COLUMN, 1, _COLUMN_MINUS_1)
+AND
+NOT DB_SMG_LGM_VAR_PASSAGE(_ROW, _COLUMN_MINUS_1, _ROW, _COLUMN)
+THEN
+PROC_SMG_LGM_ADD_PART("Wall", _ROW, _COLUMN, 0, 0);
+
+// build roof
+PROC
+PROC_SMG_LGM_CONSTRUCT_CELL((INTEGER)_ROW, (INTEGER)_COLUMN)
+THEN
+PROC_SMG_LGM_ADD_PART("Roof", _ROW, _COLUMN, 1, 0, 0.0, 0.0, 0.0);
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "__Start"

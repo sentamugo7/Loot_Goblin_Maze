@@ -1,0 +1,228 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+// constants
+//// DB_SMG_LGM_CONST_DIMENSION_LIMIT((INTEGER)_LOOT_LEVEL, (INTEGER)LIMIT_ROW, (INTEGER)LIMIT_COLUMN); // basic scroll - min 4 to max 8
+DB_SMG_LGM_CONST_DIMENSION_LIMIT(1, 3, 7); // basic scroll - min 4 to max 8
+DB_SMG_LGM_CONST_DIMENSION_LIMIT(2, 6, 11); // epic scroll - min 7 to max 12
+//DB_SMG_LGM_CONST_DIMENSION_LIMIT(1, 2, 2); // basic scroll - min 4 to max 8
+//DB_SMG_LGM_CONST_DIMENSION_LIMIT(2, 2, 2); // epic scroll - min 7 to max 12
+//// DB_SMG_LGM_CONST_LEVEL_CHECK_PERIOD((INTEGER)_MILLISECONDS);
+DB_SMG_LGM_CONST_LEVEL_CHECK_PERIOD(100); // .1 second
+//// DB_SMG_LGM_CONST_MAZE_LEVEL((STRING)_LEVEL_NAME);
+DB_SMG_LGM_CONST_MAZE_LEVEL("Maze_Level");
+//// DB_SMG_LGM_CONST_SCROLL_GUID((INTEGER)_LOOT_LEVEL, (GUID)_SCROLL_GUID);
+DB_SMG_LGM_CONST_SCROLL_GUID(1, 05e0d91a-34fd-4e26-b87b-39ffe3b3b797); // basic
+DB_SMG_LGM_CONST_SCROLL_GUID(2, 9329bf3e-88bd-4ef2-a683-a6e62e5bc136); // epic
+//// DB_SMG_LGM_CONST_PORTAL_GUID_KEY((STRING)_GUID_NAME);
+DB_SMG_LGM_CONST_PORTAL_GUID_KEY("ENTRANCE_PORTAL_GUID");
+DB_SMG_LGM_CONST_PORTAL_GUID_KEY("EXIT_PORTAL_GUID");
+//// DB_SMG_LGM_CONST_PORTAL_REWARD((INTEGER)_LOOT_LEVEL, (STRING)_GUID_NAME, (INTEGER)_REWARD_AMOUNT);
+DB_SMG_LGM_CONST_PORTAL_REWARD(1, "ENTRANCE_PORTAL_GUID", 0);
+DB_SMG_LGM_CONST_PORTAL_REWARD(1, "EXIT_PORTAL_GUID", 100);
+DB_SMG_LGM_CONST_PORTAL_REWARD(2, "ENTRANCE_PORTAL_GUID", 0);
+DB_SMG_LGM_CONST_PORTAL_REWARD(2, "EXIT_PORTAL_GUID", 1000);
+
+// variables
+//// DB_SMG_LGM_VAR_CENTER((REAL)_X, (REAL)_Y, (REAL)_Z);
+//// DB_SMG_LGM_VAR_DIMENSIONS(_ROS_SIZE, _STORY_SIZE, _COLUMN_SIZE);
+//// DB_SMG_LGM_VAR_IN_MAZE_LEVEL((INTEGER)_IN_MAZE_LEVEL);
+//// DB_SMG_LGM_VAR_LOOT_LEVEL((INTEGER)_LOOT_LEVEL);
+//// DB_SMG_LGM_VAR_RETURN_POSITION((REAL)_X, (REAL)_Y, (REAL)_Z);
+//// DB_SMG_LGM_VAR_RETURN_REGION((STRING)_REGION);
+KBSECTION
+// This Baldur's Gate 3 mod will create a small maze and transport the
+// player to the start of the maze. They can wander throught the maze and
+// find random loot. When the player reaches the end of the maze,
+// they are returned to their original spot.
+
+// testing only !!!
+IF
+CastSpell((GUIDSTRING)_Caster, (STRING)_Spell, (STRING)_SpellType, (STRING)_SpellElement, (INTEGER)_StoryActionID)
+//RemovedFrom(_Object, _InventoryHolder)
+THEN
+TemplateAddTo(SMG_LGM_BASIC_MAZE_SCROLL_05e0d91a-34fd-4e26-b87b-39ffe3b3b797, _Caster, 3); //////// $$$$ 
+TemplateAddTo(SMG_LGM_EPIC_MAZE_SCROLL_9329bf3e-88bd-4ef2-a683-a6e62e5bc136, _Caster, 1); //////// $$$$ 
+// end testing only !!!
+
+// if the player uses their loot scroll, start everything
+IF
+UseFinished(_Character, _Item, _Success)
+AND
+DB_SMG_LGM_CONST_LEVEL_CHECK_PERIOD(_LEVEL_CHECK_PERIOD)
+AND
+GetTemplate(_Item, _Template)
+AND
+DB_SMG_LGM_CONST_SCROLL_GUID(_LOOT_LEVEL, _Template)
+THEN
+PROC_SMG_LGM_CLEAR_VARIABLES();
+DB_SMG_LGM_VAR_MAZE_READY(0);
+DB_SMG_LGM_VAR_IN_MAZE_LEVEL(0);
+DB_SMG_LGM_VAR_LOOT_LEVEL(_LOOT_LEVEL);
+PROC_SMG_LGM_SAVE_RETURN_DATA();
+TemplateRemoveFromUser((ITEMROOT)_Template, _Character, 1);
+PROC_SMG_LGM_RANDOMIZE_DIMENSIONS();
+PROC_CREATE_PUZZLE_BUTTON_OPENER_TABLE();
+PROC_SMG_LGM_PLACE_PLAYER_IN_MAZE();
+PROC_SMG_LGM_DESIGN_MAZE();
+TimerLaunch("SMG_LGM_LEVEL_CHECK", _LEVEL_CHECK_PERIOD);
+
+IF
+UseFinished(_Character, _Item, _Success)
+AND
+DB_SMG_LGM_VAR_PUZZLE_BUTTONS(_ADDON_ID, _PUZZLE_BUTTON_INDEX, _Item)
+THEN
+PROC_PUSH_BUTTON(_ADDON_ID, _PUZZLE_BUTTON_INDEX, _Item);
+
+IF
+UseFinished(_Character, _Item, _Success)
+AND
+GUIDToString(_Item, _Result)
+AND
+DB_SMG_LGM_VAR_LEVERS(_ADDON_ID, _LEVER_INDEX, _Item)
+THEN
+PROC_FLIP_LEVER(_ADDON_ID, _LEVER_INDEX);
+
+// randomize maze size
+PROC
+PROC_SMG_LGM_RANDOMIZE_DIMENSIONS()
+AND
+DB_SMG_LGM_VAR_LOOT_LEVEL(_LOOT_LEVEL)
+AND
+DB_SMG_LGM_CONST_DIMENSION_LIMIT(_LOOT_LEVEL, _MIN, _MAX)
+AND
+IntegerSubtract(_MAX, _MIN, _DIFF_1)
+AND
+IntegerSum(_DIFF_1, 1, _DIFF)
+AND
+Random(_DIFF, _Random_ROW)
+AND
+IntegerSum(_Random_ROW, _MIN, _ROW_DIMENSION)
+AND
+IntegerSum(0, 1, _STORY_DIMENSION)
+AND
+Random(_DIFF, _Random_COLUMN)
+AND
+IntegerSum(_Random_COLUMN, _MIN, _COLUMN_DIMENSION)
+AND
+IntegerToReal(0, _Y_CENTER)
+AND
+DB_SMG_LGM_CONST_PART_DIMENSION("XZ_Multiplier", _XZ_Multiplier)
+AND
+RealProduct(_XZ_Multiplier, -0.5, _CenterMultiplier)
+AND
+IntegerToReal(_ROW_DIMENSION, _X_DIMENSION_REAL)
+AND
+RealProduct(_CenterMultiplier, _X_DIMENSION_REAL, _X_CENTER)
+AND
+IntegerToReal(_COLUMN_DIMENSION, _Z_DIMENSION_REAL)
+AND
+RealProduct(_CenterMultiplier, _Z_DIMENSION_REAL, _Z_CENTER)
+THEN
+DB_SMG_LGM_VAR_DIMENSIONS(_ROW_DIMENSION, _STORY_DIMENSION, _COLUMN_DIMENSION);
+DB_SMG_LGM_VAR_CENTER(_X_CENTER, _Y_CENTER, _Z_CENTER);
+
+// place the player in the maze
+PROC
+PROC_SMG_LGM_PLACE_PLAYER_IN_MAZE()
+AND
+DB_Players(_Player)
+AND
+DB_SMG_LGM_VAR_CENTER(_X_CENTER, _Y_CENTER, _Z_CENTER)
+AND
+DB_SMG_LGM_CONST_PLAYER_X_DISPLACEMENT(_PLAYER_X_DISPLACEMENT)
+AND
+RealSubtract(_X_CENTER, _PLAYER_X_DISPLACEMENT, _PLAYER_START_X)
+THEN
+TeleportPartiesToLevelWithMovie("Maze_Level", "", "");
+TeleportToPosition(_Player, _PLAYER_START_X, 0.0, _Z_CENTER, "", 0, 0, 0, 0, 0);
+
+IF
+TimerFinished("SMG_LGM_LEVEL_CHECK")
+AND
+GetHostCharacter(_Player)
+AND
+GetRegion(_Player, _CURRENT_REGION)
+AND
+DB_SMG_LGM_CONST_MAZE_LEVEL(_Maze_Level)
+AND
+_CURRENT_REGION != _Maze_Level
+AND
+DB_SMG_LGM_CONST_LEVEL_CHECK_PERIOD(_LEVEL_CHECK_PERIOD)
+THEN
+TimerLaunch("SMG_LGM_LEVEL_CHECK", _LEVEL_CHECK_PERIOD);
+
+IF
+TimerFinished("SMG_LGM_LEVEL_CHECK")
+AND
+GetHostCharacter(_Player)
+AND
+GetRegion(_Player, _CURRENT_REGION)
+AND
+DB_SMG_LGM_CONST_MAZE_LEVEL(_Maze_Level)
+AND
+_CURRENT_REGION == _Maze_Level
+THEN
+DB_SMG_LGM_VAR_IN_MAZE_LEVEL(1);
+PROC_SMG_LGM_CHECK_CONSTRUCT_MAZE();
+
+PROC
+PROC_SMG_LGM_CHECK_CONSTRUCT_MAZE()
+AND
+DB_SMG_LGM_VAR_IN_MAZE_LEVEL(1)
+AND
+DB_SMG_LGM_VAR_MAZE_READY(1)
+AND
+GetHostCharacter(_Player)
+THEN
+DB_SMG_LGM_VAR_Maze_Started(0);
+PROC_SMG_LGM_CONSTRUCT_MAZE();
+
+// save the current level and position of the player, so that they can be returned after leaving the maze
+PROC
+PROC_SMG_LGM_SAVE_RETURN_DATA()
+AND
+DB_Players(_Player)
+AND
+GetRegion(_Player, _RETURN_REGION)
+AND
+GetPosition(_Player, _RETURN_X, _RETURN_Y, _RETURN_Z)
+THEN
+DB_SMG_LGM_VAR_RETURN_REGION(_RETURN_REGION);
+DB_SMG_LGM_VAR_RETURN_POSITION(_RETURN_X, _RETURN_Y, _RETURN_Z);
+
+// return the player to their original position
+PROC
+PROC_SMG_LGM_RETURN_PLAYER()
+AND
+DB_Players(_Player)
+AND
+DB_SMG_LGM_VAR_RETURN_REGION(_RETURN_REGION)
+AND
+DB_SMG_LGM_VAR_RETURN_POSITION(_RETURN_X, _RETURN_Y, _RETURN_Z)
+THEN
+TeleportPartiesToLevelWithMovie(_RETURN_REGION, "", "");
+TeleportToPosition(_Player, _RETURN_X, _RETURN_Y, _RETURN_Z, "", 0, 0, 0, 0, 0);
+
+// if the player uses one of the portals, return them to their original level/position
+IF
+UseFinished(_Character, _Item, _Success)
+AND
+GetTemplate(_Item, _Template)
+AND
+DB_SMG_LGM_CONST_PART_GUID(_GUID_KEY, _Template)
+AND
+DB_SMG_LGM_CONST_PORTAL_GUID_KEY(_GUID_KEY)
+AND
+DB_SMG_LGM_VAR_LOOT_LEVEL(_LOOT_LEVEL)
+AND
+DB_SMG_LGM_CONST_PORTAL_REWARD(_LOOT_LEVEL, _GUID_KEY, _REWARD_AMOUNT)
+THEN
+//////// $ VFX here if exit portal
+AddGold((GUIDSTRING)_Character, _REWARD_AMOUNT);
+PROC_SMG_LGM_RETURN_PLAYER();
+PROC_SMG_LGM_CLEAR_VARIABLES();
+EXITSECTION
+
+ENDEXITSECTION
+ParentTargetEdge "__Start"
