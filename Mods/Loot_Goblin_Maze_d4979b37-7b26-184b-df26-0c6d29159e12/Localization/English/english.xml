@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<contentList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <content contentuid="hfbf48408g3009g0eb1g02ecgd121f300f8b2" version="4">Wall</content>
+  <content contentuid="h577b6371ga5a9g3937g0f0agec4e89d95f5b" version="1">Floor</content>
+  <content contentuid="h1ed6e162g63c4g4f96g914agbae379e0e85e" version="1">Roof</content>
+  <content contentuid="h6504e779g1851g4e27gbcf5g5a54d74ee54e" version="2">Wooden Floorboards</content>
+  <content contentuid="hce0bb58bgd35dg97a8g229cg4bce9a1575b6" version="4">Bad</content>
+  <content contentuid="h1e4f7821gb903g75aaga834gf3ee24f977d5" version="18">Maze Entrance</content>
+  <content contentuid="h51092394g7589ga398g8f99g055fefad1b87" version="22">Scroll of Epic Loot Goblin Maze</content>
+  <content contentuid="h676a50c2ga908gbeb6g466eg0f53bd87a8ae" version="1">Wall</content>
+  <content contentuid="h7d133052g925fg80a3g07adg859051627bb7" version="13">Enter Epic Maze</content>
+  <content contentuid="hcf5fc40ag90a4gb4d7gcf60ga33769afcb1e" version="13" />
+  <content contentuid="h5f3ec4e0gd524g8379g5554gff5cfd1f66e3" version="13" />
+  <content contentuid="h13d88efcge68dg34e9g6ca3g1a3a38a711a2" version="13">Use to enter the Epic Loot Goblin Maze</content>
+  <content contentuid="hd1a42ee6g9db3g03dcgcfdeg08b2a04ddc49" version="13">the Loot Goblin Maze is a maze where you can pass through and collect loot before reaching the end</content>
+  <content contentuid="he146b58egba45g6fc3gecf7g16bcaa9de804" version="13" />
+  <content contentuid="h1c53897agdfbcgaea0g1671gebaba0125f6f" version="13" />
+  <content contentuid="hd9dcd1e3g7288g0319g2653g359387db7157" version="7">Scroll of Basic Loot Goblin Maze</content>
+  <content contentuid="hcc131d3cg0e2eg0521gdc16gd2979b9a7c70" version="7">Enter Basic Maze</content>
+  <content contentuid="hfe980f14g09b6g3d53g8824g6ac864b3b30e" version="7">Use to enter the Basic Loot Goblin Maze</content>
+  <content contentuid="h470bf2f8gd191g0b67g0e9bgb3ad558c7874" version="7">the Loot Goblin Maze is a maze where you can pass through and collect loot before reaching the end</content>
+  <content contentuid="h26284928g4c9dge044g08eeg49c3d90422b4" version="5">Gold Coins</content>
+  <content contentuid="h3370ab81g1bd3gc0b7g695cgaec99def69bb" version="11">Lots of Gold Coins</content>
+  <content contentuid="hca6a3b40g6812g520dg468dgacac80d32c09" version="8">a few Gold Coins</content>
+  <content contentuid="hb7d295c4g4301g955bgd592gc081d9ec39bf" version="6" />
+  <content contentuid="hfa5ced99g6aedgaecdgc5b6g84bf4ddf09af" version="6" />
+  <content contentuid="h9d92ca21g948agcdf0g0d55gc841ef84b701" version="6">a pile of 5 gold coins</content>
+  <content contentuid="h98cf10ecgad53geccbgb668gdd3d62fbfa71" version="6">a nice treasure bounty of 5 gold</content>
+  <content contentuid="h26130d65g0bb2g29f2g3c79ga9394c868f15" version="6" />
+  <content contentuid="hf9439b38g9391g6a50ga245ge9d744c45a59" version="6" />
+  <content contentuid="h00b5e2bbgedf9g1b12g23bcg5ca2981a0536" version="2">a pile of 50 gold coins</content>
+  <content contentuid="h4816e2e9g66a4gf33dg551egcf004091b71f" version="4">a pile of 500 gold coins</content>
+  <content contentuid="h3c73f522g1a23ge9e9g577fg6b43aaab08f9" version="1">a great treasure bounty of 50 gold</content>
+  <content contentuid="h02c02463gf0d0g29fcgd153g9fe3a3450bcb" version="3">a fantastic treasure bounty of 500 gold</content>
+  <content contentuid="heec842b1g27feg77ecga666gb746c5396c36" version="10">Ingredient Ark</content>
+  <content contentuid="hed1bb470ga408g2d1dg9b49ge0120dfe4215" version="10">chest of ingredients</content>
+  <content contentuid="h4c954026g088eg7d63ge58cg12b37bf531cf" version="5">Potion Depository</content>
+  <content contentuid="hf1d1049dgb520gfd98gdee1gc15fe2219bfa" version="5">chest of potions</content>
+  <content contentuid="h52ea7762g53aag0ae4gda77gd8922d184fc8" version="3">Scroll Vault</content>
+  <content contentuid="he2ff25a2g929fg3ac1g2d71g9c358078a2d8" version="3">chest of stuff</content>
+  <content contentuid="h81e8e0c3g06ceg4d1fgf005g16961ec510a6" version="9">ingredients</content>
+  <content contentuid="hb16b846bg1aa4gbf38g9cc5g8b8b39aad53d" version="4">potions</content>
+  <content contentuid="h8ecb8fb8gf010g3f94g1d77g85d5598f6cea" version="2">stuff</content>
+  <content contentuid="hb9ef71c8gfb46ge8f1g0064g08e0b03717ea" version="1">Wicker Basket</content>
+  <content contentuid="h8aed85fbg8043g7fa6g3fdag227bf1ff6f85" version="1">A portable container woven from dried reeds.</content>
+  <content contentuid="hc220b2aeg3f92ga591g20fag051540048bc3" version="4">Maze Exit</content>
+  <content contentuid="hf6ee83aeg6c56g3a2agff90g62f21ec882c2" version="6" />
+  <content contentuid="h1d545e0cg3045gb74fg4080gcd290303212b" version="6" />
+  <content contentuid="h42cd1a59g06a7gd615g5949gfd7fbec944a3" version="6" />
+  <content contentuid="hd581ef0fg8d94g4ffeg1780gdb4442bc3107" version="6" />
+  <content contentuid="haf82bcf6g3728ge7cbg02e9gc7724b8396d3" version="6">Lever</content>
+  <content contentuid="h0eca9459g99cegb217g1d6eg370e611d7757" version="10">Stone Wall</content>
+  <content contentuid="hac058a96gf764g5e5dgb439ga7c55795e6aa" version="1">Wooden Shelf</content>
+  <content contentuid="h173bfc05g03beg409fgb2afg632df6857efc" version="2">Squirrel</content>
+  <content contentuid="hb8a5af05g497ag5638g3acfg458740d8c2c2" version="1">Squirrel</content>
+  <content contentuid="h879d40c2g5796g3844gbe95g62d66411286d" version="3">Dead Goblin Brawler</content>
+  <content contentuid="he10f40f5gb795g0b9bg6c80g36f9f8a6c0d9" version="3">Dead Goblin Booyahg</content>
+  <content contentuid="h6877bab2g73b6g46b3gbe4fg2b33cd87fb59" version="4">Intellect Detonator</content>
+  <content contentuid="h49459200g5de1g0303gc3afg1fb74f8b3e42" version="1">Dead Cambion</content>
+  <content contentuid="h35ba8f71g091ag2d2cgac8ag22342dadfde8" version="1">Dead Bugbear</content>
+  <content contentuid="hd2112ffagccfbge4ecgca97g6248c62307b6" version="1">Dead Drider</content>
+  <content contentuid="ha01e5437g47b9gd082gee94gab9b135140d9" version="1">Dead Hobgoblin</content>
+  <content contentuid="h7d715221g10dcg3655gf96cgb8aff63b99c2" version="3">Wall</content>
+  <content contentuid="he31db1a3gfc1cg2a98g75eagc7300f3f32c3" version="3">Button</content>
+  <content contentuid="h8b79ae8fgdc16ga958gf71dg2a2104e090b5" version="3">Button</content>
+</contentList>
