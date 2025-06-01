@@ -1,0 +1,59 @@
+treasure itemtypes "Common","Uncommon","Rare","Epic","Legendary","Divine","Unique"
+new treasuretable "SMG_LGM_CHEST_1_LOOT"
+new subtable "1,1"
+StartLevel "1"
+EndLevel "2"
+object category "MagicScroll",1,0,0,0,0,0,0,0
+new subtable "1,1"
+StartLevel "3"
+EndLevel "4"
+object category "MagicScroll",1,0,0,0,0,0,0,0
+object category "MagicScroll_2",1,0,0,0,0,0,0,0
+new subtable "1,1"
+StartLevel "5"
+EndLevel "6"
+object category "MagicScroll",1,0,0,0,0,0,0,0
+object category "MagicScroll_2",2,0,0,0,0,0,0,0
+object category "MagicScroll_3",1,0,0,0,0,0,0,0
+new subtable "1,1"
+StartLevel "7"
+EndLevel "8"
+object category "MagicScroll_2",1,0,0,0,0,0,0,0
+object category "MagicScroll_3",2,0,0,0,0,0,0,0
+object category "MagicScroll_4",1,0,0,0,0,0,0,0
+new subtable "1,1"
+StartLevel "9"
+EndLevel "10"
+object category "MagicScroll_3",1,0,0,0,0,0,0,0
+object category "MagicScroll_4",2,0,0,0,0,0,0,0
+object category "MagicScroll_5",1,0,0,0,0,0,0,0
+new subtable "1,1"
+StartLevel "11"
+object category "MagicScroll_4",1,0,0,0,0,0,0,0
+object category "MagicScroll_5",2,0,0,0,0,0,0,0
+object category "MagicScroll_6",1,0,0,0,0,0,0,0
+new subtable "-2"
+object category "I_SMG_LGM_EPIC__MAZE_SCROLL",1,0,0,0,0,0,0,0
+new treasuretable "Exploration_Minor"
+new subtable "3,3;4,2;5,1;6,1;7,1"
+object category "Gold",1,0,0,0,0,0,0,0
+new subtable "1,1"
+object category "T_Exploration_Minor_DoublingPack",3,0,0,0,0,0,0,0
+object category "T_Exploration_Minor_GuaranteedSinglePack",1,0,0,0,0,0,0,0
+new subtable "-6"
+object category "I_SMG_LGM_BASIC_MAZE_SCROLL",1,0,0,0,0,0,0,0
+new treasuretable "SMG_LGM_INGEDIENT_ARK_B_TT"
+new subtable "1,1"
+StartLevel "1"
+object category "I_ALCH_Ingredient_Part_BehirScales
+",1,0,0,0,0,0,0,0
+new treasuretable "SMG_LGM_POTION_DEPOSITORY_B_TT"
+new subtable "1,1"
+StartLevel "1"
+object category "I_CONS_Potion_Antitoxin
+",1,0,0,0,0,0,0,0
+new treasuretable "SMG_LGM_SCROLL_VAULT_B_TT"
+new subtable "1,1"
+StartLevel "1"
+object category "I_LOOT_SCROLL_ArcaneLock
+",1,0,0,0,0,0,0,0
